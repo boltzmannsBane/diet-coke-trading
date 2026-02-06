@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #0a0e17;
+  --color-card: #101624;
+  --color-subtle: #28324a;
+  --color-muted: #505a6e;
+  --color-secondary: #8c96aa;
+  --color-foreground: #f0f0f5;
+  --color-profit: #22c55e;
+  --color-loss: #ef4444;
+  --color-info: #3b82f6;
+  --color-chart: #63b3ed;
+  --color-ticker: #eab308;
+}
+
+body {
+  background-color: var(--color-primary);
+  color: var(--color-foreground);
+}
+
+@keyframes ticker-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.ticker-bar:hover .ticker-track {
+  animation-play-state: paused;
+}
+
+@keyframes live-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.2; }
+}
+
+.live-pulse {
+  animation: live-pulse 2s ease-in-out infinite;
+}
+
+@keyframes awaiting-blink {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+
+.awaiting-pulse {
+  animation: awaiting-blink 3s ease-in-out infinite;
+}
